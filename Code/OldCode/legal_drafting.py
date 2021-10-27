@@ -170,7 +170,7 @@ def display_legal(master_list):
             enter_speed = get_number("How fast would you like to press enter? (Leave blank to use default '0.2' seconds): ",blank_entry=True)
             if enter_speed == "":
                 enter_speed=0.2
-            plot_legal(master_list)
+            plot_legal(master_list,type_speed,enter_speed)
         elif choice == 4:
             quit()
 
@@ -189,7 +189,7 @@ def plot_legal(master_list,type_speed,enter_speed):
                     input("Once ready put cursor at the end of this sentence, \nhover mouse over Civil 3D, \nand press ENTER. ")
                     pyautogui.click()
 
-                plot(segment, master_list.index(segment))
+                plot(segment, master_list.index(segment),type_speed,enter_speed)
                 
                 previous_plot = "line"
 
@@ -200,7 +200,7 @@ def plot_legal(master_list,type_speed,enter_speed):
                 input("Once ready put cursor at the end of this sentence, \nhover mouse over Civil 3D, \nand press ENTER. ")
                 pyautogui.click()
                 
-                plot(segment, master_list.index(segment))
+                plot(segment, master_list.index(segment), type_speed, enter_speed)
 
                 previous_plot = "curve"
 
@@ -212,14 +212,14 @@ def plot_legal(master_list,type_speed,enter_speed):
     print ("\nLegal plotting was successful!")
 
 
-def plot(segment, index):
+def plot(segment, index, type_speed, enter_speed):
     for info in segment:
         try:
             if info == "line" or info == "curve":
                 print()
             else:
-                pyautogui.write(info, interval=0.1)
-                pyautogui.write("\n", interval=0.2)
+                pyautogui.write(info, interval=type_speed)
+                pyautogui.write(" ", interval=enter_speed)
                 print(info)
         except: 
             print (f"Failed to plot {info} from segment {index}: {segment}")
@@ -230,8 +230,6 @@ def main():
     legal_list = format_legal(legal)
     master_list = define_segments(legal_list)
     display_legal(master_list)
-    print()
-    pass
 
 
 main()
