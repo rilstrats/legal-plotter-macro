@@ -14,4 +14,4 @@ Hence, Legal Plotter was created. This project takes a legal description as inpu
 
 ## Future Work
 * Translate this program into C# so that it can be built as a plugin to AutoCAD
-* Make it able to handle more errors in the legal description typing (replacing a zero with an 0, etc.)
+* Make it able to handle more errors in the legal description typing (replacing a "0" with an "O", etc.)
