@@ -7,7 +7,8 @@ In the legal, surveying, and civil engineering fields, real estate properties ar
 Hence, Legal Plotter was created. This project takes a legal description as input and plots it into AutoCAD for you!
 
 ## Development Environment
-* __Python 3.9.7:__ Python is a programmin language, which this whole program was developed in.
+* __Visual Studio Code (IDE):__ An IDE with great support for Python.
+* __Python 3.9.7:__ Python is a programming language, which this whole program was developed in.
 * __RE:__ Regular Expression is a library built into Python which provides many options for searching through text. This was used to collect the necessary information from the legal description.
 * __PyAutoGUI:__ This is a library which allows Python to simulate mouse and keyboard input, which is how this software communicates with AutoCAD
 * __Py2exe:__ This is a library that enables saving a python file as an executable file, so this program can be run on any computer without needing to have Python installed.
